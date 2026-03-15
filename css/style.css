@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body{
 font-family: Arial, sans-serif;
 margin:0;
@@ -89,4 +93,22 @@ color:white;
 
 .project-card a:hover {
   text-decoration: underline;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding:10px 15px;
+  font-size:16px;
+  display:none;
+  background:#007bff;
+  color:white;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+#backToTop:hover{
+  background:#0056b3;
 }
