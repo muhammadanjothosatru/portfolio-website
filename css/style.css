@@ -112,3 +112,176 @@ color:white;
 #backToTop:hover{
   background:#0056b3;
 }
+
+#changing-text::after {
+  content: '|';
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+#skills {
+  padding: 80px 10%;
+}
+
+#skills h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.skills-container {
+  max-width: 800px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 40px;
+}
+
+.skill {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.skill-rating {
+  text-align: right;
+}
+
+.stars {
+  color: gold;
+  display: block;
+}
+
+.level {
+  font-size: 13px;
+  color: #666;
+}
+
+#contact {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: auto;
+}
+
+.contact-links {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+@media (max-width: 600px) {
+
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-links a {
+    width: 200px;
+    justify-content: center;
+  }
+
+}
+
+/* Email */
+.email {
+  background: #ea4335;
+}
+
+/* GitHub */
+.github {
+  background: #24292e;
+}
+
+/* LinkedIn */
+.linkedin {
+  background: #0a66c2;
+}
+
+/* Hover */
+.contact-links a:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.nav-links {
+  position: absolute;
+  top: 70px;
+  right: 0;
+  background: #ffffff;
+  width: 200px;
+  flex-direction: column;
+  padding: 20px;
+  display: none;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+.nav-links a {
+  color: #333;
+}
+
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: white;
+    width: 200px;
+    flex-direction: column;
+    padding: 20px;
+    display: none;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+}

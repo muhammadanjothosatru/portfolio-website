@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>My Portfolio</title>
 
+<title>My Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -13,19 +14,25 @@
 
 <!-- Navbar -->
 <nav>
-<h2>MyPortfolio</h2>
-<ul>
-<li><a href="#hero">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+  <h1 class="logo">Portfolio</h1>
+
+  <div class="menu-toggle">
+    ☰
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
 <!-- Hero -->
 <section id="hero">
-<h1>Hello, I'm a Web Developer</h1>
-<p>Welcome to my portfolio website</p>
+  <h1>Hello, I'm a <span id="changing-text"></span></h1>
+  <p>Welcome to my portfolio website</p>
 </section>
 
 <!-- About -->
@@ -38,6 +45,104 @@
 <section id="projects">
   <h2>Projects</h2>
   <div class="projects-container"></div> <!-- kosong, nanti JS isi -->
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+
+  <div class="skills-container">
+
+    <div class="skill">
+      <span class="skill-name">HTML</span>
+      <div class="skill-rating">
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="level">Advanced</span>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span class="skill-name">Linux</span>
+      <div class="skill-rating">
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="level">Advanced</span>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span class="skill-name">CSS</span>
+      <div class="skill-rating">
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="level">Intermediate</span>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span class="skill-name">Git</span>
+      <div class="skill-rating">
+        <span class="stars">⭐⭐⭐</span>
+        <span class="level">Intermediate</span>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span class="skill-name">JavaScript</span>
+      <div class="skill-rating">
+        <span class="stars">⭐⭐⭐</span>
+        <span class="level">Intermediate</span>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span class="skill-name">System Administration</span>
+      <div class="skill-rating">
+        <span class="stars">⭐⭐⭐⭐</span>
+        <span class="level">Advanced</span>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span class="skill-name">PHP</span>
+      <div class="skill-rating">
+        <span class="stars">⭐⭐⭐</span>
+        <span class="level">Intermediate</span>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span class="skill-name">Networking</span>
+      <div class="skill-rating">
+        <span class="stars">⭐⭐⭐</span>
+        <span class="level">Intermediate</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+
+  <div class="contact-container">
+
+    <p>If you would like to collaborate or have any questions, feel free to reach out.</p>
+
+    <div class="contact-links">
+
+      <a class="email" href="mailto:muhammadanjothosatru@gmail.com">
+        <i class="fa-solid fa-envelope"></i> Email
+      </a>
+
+      <a class="github" href="https://github.com/muhammadanjothosatru" target="_blank">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+
+      <a class="linkedin" href="https://www.linkedin.com/in/muhammad-anjotho-satru-35a9b7211/" target="_blank">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      </a>
+
+    </div>
+
+  </div>
 </section>
 
 <button id="backToTop">↑ Top</button>

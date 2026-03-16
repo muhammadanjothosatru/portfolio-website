@@ -49,3 +49,41 @@ projects.forEach(proj => {
 
   container.appendChild(card);
 });
+
+// Text Rotating Effect
+const texts = ["Web Developer", "Cloud Engineer", "IT Enthusiast", "Frontend Developer"];
+let count = 0;
+let index = 0;
+let currentText = '';
+let letter = '';
+const target = document.getElementById('changing-text');
+
+(function type(){
+  if(count === texts.length) count = 0;
+  currentText = texts[count];
+  letter = currentText.slice(0, ++index);
+  target.textContent = letter;
+  
+  if(letter.length === currentText.length){
+    setTimeout(() => {
+      index = 0;
+      count++;
+      type();
+    }, 2000); // delay 2 detik sebelum pindah ke kata berikutnya
+  } else {
+    setTimeout(type, 150); // speed mengetik per huruf
+  }
+})();
+
+const toggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".nav-links");
+
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("active");
+  });
+});
