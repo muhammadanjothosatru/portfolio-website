@@ -40,8 +40,8 @@ const projects = [
     description: "Personal portfolio built with HTML, CSS, and JavaScript.",
     image: "assets/images/portfolio.png",
     tech: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/username/portfolio",
-    demo: "https://username.github.io"
+    github: "https://github.com/muhammadanjothosatru/portfolio-website",
+    demo: "https://muhammadanjothosatru.github.io/portfolio-website/"
   },
   {
     title: "Weather App",
