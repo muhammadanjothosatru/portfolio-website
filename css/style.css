@@ -26,6 +26,42 @@ nav{
 }
 
 /* Desktop menu */
+
+.hero-buttons{
+  margin-top:30px;
+  display:flex;
+  gap:15px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.btn-primary{
+  background:#007bff;
+  color:white;
+  padding:12px 22px;
+  border-radius:6px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn-primary:hover{
+  background:#0056b3;
+}
+
+.btn-secondary{
+  border:2px solid #007bff;
+  color:#007bff;
+  padding:10px 20px;
+  border-radius:6px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn-secondary:hover{
+  background:#007bff;
+  color:white;
+}
+
 .nav-links{
   list-style:none;
   display:flex;
@@ -56,6 +92,39 @@ nav{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px 40px;
+}
+
+.project-card img{
+  width:100%;
+  border-radius:8px;
+  margin-bottom:10px;
+}
+
+.project-tech{
+  margin:10px 0;
+}
+
+.tech{
+  background:#f1f1f1;
+  padding:4px 8px;
+  border-radius:4px;
+  font-size:12px;
+  margin-right:5px;
+}
+
+.project-links{
+  margin-top:10px;
+}
+
+.project-links a{
+  text-decoration:none;
+  margin-right:10px;
+  font-size:14px;
+  color:#007bff;
+}
+
+.project-links a:hover{
+  text-decoration:underline;
 }
 
 /* Mobile */

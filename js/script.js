@@ -16,7 +16,7 @@ backToTop.addEventListener('click', () => {
 });
 
 // Data Projects
-const projects = [
+/*const projects = [
   {
     title: "Portfolio Website",
     description: "My personal portfolio website built with HTML, CSS, and JS.",
@@ -32,10 +32,29 @@ const projects = [
     description: "Notes taking app with localStorage.",
     link: "#"
   }
+];*/
+
+const projects = [
+  {
+    title: "Portfolio Website",
+    description: "Personal portfolio built with HTML, CSS, and JavaScript.",
+    image: "assets/images/portfolio.png",
+    tech: ["HTML", "CSS", "JavaScript"],
+    github: "https://github.com/username/portfolio",
+    demo: "https://username.github.io"
+  },
+  {
+    title: "Weather App",
+    description: "Weather forecast using API.",
+    image: "assets/images/weather.png",
+    tech: ["HTML", "CSS", "JavaScript"],
+    github: "https://github.com/username/weather-app",
+    demo: "https://username.github.io/weather-app"
+  }
 ];
 
 // Render Projects
-const container = document.querySelector('.projects-container');
+/*const container = document.querySelector('.projects-container');
 
 projects.forEach(proj => {
   const card = document.createElement('div');
@@ -48,6 +67,38 @@ projects.forEach(proj => {
   `;
 
   container.appendChild(card);
+});*/
+
+const container = document.querySelector(".projects-container");
+
+projects.forEach(project => {
+
+  const techList = project.tech.map(t => 
+    `<span class="tech">${t}</span>`
+  ).join("");
+
+  const card = `
+    <div class="project-card">
+
+      <img src="${project.image}" alt="${project.title}">
+
+      <h3>${project.title}</h3>
+      <p>${project.description}</p>
+
+      <div class="project-tech">
+        ${techList}
+      </div>
+
+      <div class="project-links">
+        <a href="${project.github}" target="_blank">GitHub</a>
+        <a href="${project.demo}" target="_blank">Live Demo</a>
+      </div>
+
+    </div>
+  `;
+
+  container.innerHTML += card;
+
 });
 
 // Text Rotating Effect
