@@ -26,10 +26,10 @@ const projects = [
   },
   {
     title: "Todo App",
-    description:
-      "A simple and interactive task management app with local storage, filtering, and editing features.",
+    description: "A simple and interactive task management app...",
     image: "assets/images/todo.png",
-    live: "https://muhammadanjothosatru.github.io/todo-app/",
+    tech: ["HTML", "CSS", "JavaScript"],
+    demo: "https://muhammadanjothosatru.github.io/todo-app/",
     github: "https://github.com/muhammadanjothosatru/todo-app",
   },
 ];
