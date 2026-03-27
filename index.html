@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Muhammad Anjotho Satru — Web Developer, Cloud Engineer & IT Enthusiast. Graduate of Institut Teknologi Sepuluh Nopember.">
 
+  <title>Muhammad Anjotho — Portfolio</title>
 
-<title>My Portfolio</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="css/style.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <!-- Navbar -->
-<nav>
-  <h1>Portfolio</h1>
-
-  <div class="menu-toggle" id="menu-toggle">
-    ☰
-  </div>
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <span class="logo-bracket">&lt;</span>MA<span class="logo-bracket">/&gt;</span>
+  </a>
 
   <ul class="nav-links" id="nav-links">
     <li><a href="#hero">Home</a></li>
@@ -27,170 +33,176 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+
+  <div class="nav-actions">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+      <i class="fa-solid fa-moon" id="theme-icon"></i>
+    </button>
+    <div class="menu-toggle" id="menu-toggle" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
 </nav>
 
 <!-- Hero -->
 <section id="hero">
+  <div class="hero-content">
+    <p class="hero-greeting">Hello, I'm</p>
+    <h1 class="hero-name">Muhammad Anjotho</h1>
 
-  <h1>Hi, I'm Muhammad Anjotho</h1>
+    <h2 class="hero-changing">
+      <span id="changing-text"></span>
+    </h2>
 
-  <h2 class="hero-changing">
-    <span id="changing-text"></span>
-  </h2>
+    <p class="hero-desc">
+      Graduate of <strong>Institut Teknologi Sepuluh Nopember</strong> passionate about building web applications and learning new technologies.
+    </p>
 
-  <p class="hero-desc">
-    Graduate of <strong>Institut Teknologi Sepuluh Nopember</strong> passionate about building web applications and learning new technologies.
-  </p>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn-primary">
+        <i class="fa-solid fa-code"></i> View Projects
+      </a>
+      <a href="#contact" class="btn-secondary">
+        <i class="fa-solid fa-paper-plane"></i> Contact Me
+      </a>
+    </div>
+  </div>
 
-  <div class="hero-buttons">
-  <a href="#projects" class="btn-primary">View Projects</a>
-  <a href="#contact" class="btn-secondary">Contact Me</a>
-</div>
-
+  <div class="hero-particles" aria-hidden="true"></div>
 </section>
 
 <!-- About -->
 <section id="about">
-
-  <h2>About Me</h2>
-
-  <p>
-    I am a graduate of <strong>Institut Teknologi Sepuluh Nopember</strong> 
-    with a strong interest in <strong>software development</strong> and 
-    <strong>web technologies</strong>.
-  </p>
-
-  <p>
-    I enjoy building applications using 
-    <strong>HTML, CSS, JavaScript, and Python</strong>, and I am always 
-    eager to learn new tools and improve my development skills.
-  </p>
-
-  <p>
-    Through personal projects, I focus on writing 
-    <strong>clean, maintainable code</strong> and creating simple yet 
-    effective digital solutions.
-  </p>
-
+  <h2 class="section-title">About Me</h2>
+  <div class="about-content">
+    <div class="about-text">
+      <p>
+        I am a graduate of <strong>Institut Teknologi Sepuluh Nopember</strong>
+        with a strong interest in <strong>software development</strong> and
+        <strong>web technologies</strong>.
+      </p>
+      <p>
+        I enjoy building applications using
+        <strong>HTML, CSS, JavaScript, and Python</strong>, and I am always
+        eager to learn new tools and improve my development skills.
+      </p>
+      <p>
+        Through personal projects, I focus on writing
+        <strong>clean, maintainable code</strong> and creating simple yet
+        effective digital solutions.
+      </p>
+    </div>
+  </div>
 </section>
 
 <!-- Projects -->
 <section id="projects">
-  <h2>Projects</h2>
+  <h2 class="section-title">Projects</h2>
   <div class="projects-container"></div>
-</div>
 </section>
 
+<!-- Skills -->
 <section id="skills">
-  <h2>Skills</h2>
+  <h2 class="section-title">Skills</h2>
 
   <div class="skills-container">
 
-    <div class="skill">
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
       <span class="skill-name">HTML</span>
-      <div class="skill-rating">
-        <span class="stars">⭐⭐⭐⭐⭐</span>
-        <span class="level">Advanced</span>
-      </div>
+      <div class="skill-bar"><div class="skill-fill" style="--fill: 95%"></div></div>
+      <span class="skill-level">Advanced</span>
     </div>
 
-    <div class="skill">
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fa-brands fa-linux"></i></div>
       <span class="skill-name">Linux</span>
-      <div class="skill-rating">
-        <span class="stars">⭐⭐⭐⭐</span>
-        <span class="level">Advanced</span>
-      </div>
+      <div class="skill-bar"><div class="skill-fill" style="--fill: 85%"></div></div>
+      <span class="skill-level">Advanced</span>
     </div>
 
-    <div class="skill">
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fa-brands fa-css3-alt"></i></div>
       <span class="skill-name">CSS</span>
-      <div class="skill-rating">
-        <span class="stars">⭐⭐⭐⭐</span>
-        <span class="level">Intermediate</span>
-      </div>
+      <div class="skill-bar"><div class="skill-fill" style="--fill: 80%"></div></div>
+      <span class="skill-level">Intermediate</span>
     </div>
 
-    <div class="skill">
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fa-brands fa-git-alt"></i></div>
       <span class="skill-name">Git</span>
-      <div class="skill-rating">
-        <span class="stars">⭐⭐⭐</span>
-        <span class="level">Intermediate</span>
-      </div>
+      <div class="skill-bar"><div class="skill-fill" style="--fill: 65%"></div></div>
+      <span class="skill-level">Intermediate</span>
     </div>
 
-    <div class="skill">
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
       <span class="skill-name">JavaScript</span>
-      <div class="skill-rating">
-        <span class="stars">⭐⭐⭐</span>
-        <span class="level">Intermediate</span>
-      </div>
+      <div class="skill-bar"><div class="skill-fill" style="--fill: 65%"></div></div>
+      <span class="skill-level">Intermediate</span>
     </div>
 
-    <div class="skill">
-      <span class="skill-name">System Administration</span>
-      <div class="skill-rating">
-        <span class="stars">⭐⭐⭐⭐</span>
-        <span class="level">Advanced</span>
-      </div>
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fa-solid fa-server"></i></div>
+      <span class="skill-name">Sys Admin</span>
+      <div class="skill-bar"><div class="skill-fill" style="--fill: 85%"></div></div>
+      <span class="skill-level">Advanced</span>
     </div>
 
-    <div class="skill">
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fa-brands fa-php"></i></div>
       <span class="skill-name">PHP</span>
-      <div class="skill-rating">
-        <span class="stars">⭐⭐⭐</span>
-        <span class="level">Intermediate</span>
-      </div>
+      <div class="skill-bar"><div class="skill-fill" style="--fill: 60%"></div></div>
+      <span class="skill-level">Intermediate</span>
     </div>
 
-    <div class="skill">
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fa-solid fa-network-wired"></i></div>
       <span class="skill-name">Networking</span>
-      <div class="skill-rating">
-        <span class="stars">⭐⭐⭐</span>
-        <span class="level">Intermediate</span>
-      </div>
+      <div class="skill-bar"><div class="skill-fill" style="--fill: 65%"></div></div>
+      <span class="skill-level">Intermediate</span>
     </div>
 
   </div>
 </section>
 
+<!-- Contact -->
 <section id="contact">
-  <h2>Contact</h2>
+  <h2 class="section-title">Get In Touch</h2>
 
   <div class="contact-container">
-
     <p>If you would like to collaborate or have any questions, feel free to reach out.</p>
 
     <div class="contact-links">
 
-      <a class="email" href="mailto:muhammadanjothosatru@gmail.com">
+      <a class="contact-btn email" href="mailto:muhammadanjothosatru@gmail.com">
         <i class="fa-solid fa-envelope"></i> Email
       </a>
 
-      <a class="github" href="https://github.com/muhammadanjothosatru" target="_blank">
+      <a class="contact-btn github" href="https://github.com/muhammadanjothosatru" target="_blank">
         <i class="fa-brands fa-github"></i> GitHub
       </a>
 
-      <a class="linkedin" href="https://www.linkedin.com/in/muhammad-anjotho-satru-35a9b7211/" target="_blank">
+      <a class="contact-btn linkedin" href="https://www.linkedin.com/in/muhammad-anjotho-satru-35a9b7211/" target="_blank">
         <i class="fa-brands fa-linkedin"></i> LinkedIn
       </a>
 
     </div>
-
   </div>
 </section>
 
-<button id="backToTop">↑ Top</button>
+<button id="backToTop" aria-label="Back to top">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
 
 <!-- Footer -->
 <footer>
-<p>© 2026 My Portfolio</p>
+  <p>Designed & Built by <strong>Muhammad Anjotho</strong> &copy; 2026</p>
 </footer>
 
-
-
 <script src="js/script.js"></script>
-
-
 
 </body>
 </html>

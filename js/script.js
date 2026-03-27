@@ -1,22 +1,48 @@
 // =======================
+// THEME MANAGER
+// =======================
+const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = document.getElementById("theme-icon");
+const htmlRoot = document.documentElement;
+
+function setTheme(theme) {
+  htmlRoot.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+
+  if (themeIcon) {
+    themeIcon.className = theme === "dark"
+      ? "fa-solid fa-sun"
+      : "fa-solid fa-moon";
+  }
+}
+
+// Load saved theme or default to dark
+const savedTheme = localStorage.getItem("theme") || "dark";
+setTheme(savedTheme);
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const current = htmlRoot.getAttribute("data-theme");
+    setTheme(current === "dark" ? "light" : "dark");
+  });
+}
+
+// =======================
 // BACK TO TOP BUTTON
 // =======================
 const backToTop = document.getElementById("backToTop");
 
 if (backToTop) {
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 200) {
-      backToTop.style.display = "block";
+    if (window.scrollY > 300) {
+      backToTop.classList.add("visible");
     } else {
-      backToTop.style.display = "none";
+      backToTop.classList.remove("visible");
     }
   });
 
   backToTop.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
 
@@ -55,15 +81,15 @@ if (container) {
       : "";
 
     const githubLink = project.github
-      ? `<a href="${project.github}" target="_blank">GitHub</a>`
+      ? `<a href="${project.github}" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>`
       : "";
 
     const demoLink = project.demo
-      ? `<a href="${project.demo}" target="_blank">Live Demo</a>`
+      ? `<a href="${project.demo}" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>`
       : "";
 
     const card = `
-      <div class="project-card">
+      <div class="project-card fade-in">
         <img src="${project.image}" alt="${project.title}">
         <h3>${project.title}</h3>
         <p>${project.description}</p>
@@ -98,27 +124,34 @@ const target = document.getElementById("changing-text");
 if (target) {
   let count = 0;
   let index = 0;
-  let currentText = "";
-  let letter = "";
+  let isDeleting = false;
 
-  (function type() {
-    if (count === texts.length) count = 0;
+  function type() {
+    const currentText = texts[count];
 
-    currentText = texts[count];
-    letter = currentText.slice(0, ++index);
-
-    target.textContent = letter;
-
-    if (letter.length === currentText.length) {
-      setTimeout(() => {
-        index = 0;
-        count++;
-        type();
-      }, 2000);
+    if (isDeleting) {
+      index--;
     } else {
-      setTimeout(type, 150);
+      index++;
     }
-  })();
+
+    target.textContent = currentText.slice(0, index);
+
+    let speed = isDeleting ? 50 : 100;
+
+    if (!isDeleting && index === currentText.length) {
+      speed = 2000;
+      isDeleting = true;
+    } else if (isDeleting && index === 0) {
+      isDeleting = false;
+      count = (count + 1) % texts.length;
+      speed = 400;
+    }
+
+    setTimeout(type, speed);
+  }
+
+  type();
 }
 
 // =======================
@@ -130,5 +163,60 @@ const nav = document.getElementById("nav-links");
 if (toggle && nav) {
   toggle.addEventListener("click", () => {
     nav.classList.toggle("active");
+    toggle.classList.toggle("active");
+  });
+
+  // Close menu when a nav link is clicked
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("active");
+      toggle.classList.remove("active");
+    });
   });
 }
+
+// =======================
+// SCROLL ANIMATIONS
+// =======================
+const observerOptions = {
+  threshold: 0.15,
+  rootMargin: "0px 0px -40px 0px",
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+// Observe all fade-in elements
+document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+
+// Also make skill cards and about content animate in
+document.querySelectorAll(".skill-card, .about-text, .contact-container").forEach((el) => {
+  el.classList.add("fade-in");
+  observer.observe(el);
+});
+
+// =======================
+// NAVBAR SCROLL EFFECT
+// =======================
+let lastScroll = 0;
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.scrollY;
+
+  if (navbar) {
+    if (currentScroll > 50) {
+      navbar.style.boxShadow = "var(--shadow-md)";
+    } else {
+      navbar.style.boxShadow = "none";
+    }
+  }
+
+  lastScroll = currentScroll;
+});
